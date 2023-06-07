@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { SIGN_IN } from "../utils/mutations";
 import AuthService from "../utils/auth";
+import MyNav from "../components/Navigation/Nav";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import './log-in.module.css';
 import { async } from "regenerator-runtime";
@@ -26,8 +27,10 @@ const LoginForm = (props) => {
     }
     
     return (
-        <Container className="login-container">
-        <Row>
+      <>
+      <MyNav></MyNav>
+        <Container className="">
+        <Row className="login-container">
           <Col>
             <div className="login-page">
               <Form className="my-4 mx-3" onSubmit={handleFormSubmit}>
@@ -50,14 +53,18 @@ const LoginForm = (props) => {
                     placeholder="Password"
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit" className="mt-2">
+                <Button variant="" type="submit" className="mt-2 buttons">
                   Login
                 </Button>
               </Form>
             </div>
           </Col>
         </Row>
+        <Row>
+          
+        </Row>
       </Container>
+      </>
     );
 }
 
