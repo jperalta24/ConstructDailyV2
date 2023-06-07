@@ -47,17 +47,6 @@ code {
   color: var(--light-gray);
 }
 
-/* .left-pane{
-  height: 100%;
-  position: relative;
-  text-align: center;
-  background-color: var(--tertiary-color);
-  align-items: center;
-  justify-content: center;
-  display: flex ;
-  flex-direction: column;
-} */
-
 #logo {
   margin-top: 20px;
   padding-right: 220px;
@@ -88,7 +77,21 @@ code {
   margin-left: 0;
 } */
 
+.signup-link{
+  color: var(--light-gray);
+}
 
+.signup-container{
+    /* padding-top: 25px; */
+    margin-top: 75px;
+    margin-right: 250px;
+    margin-left: 250px;
+    padding-bottom: 5px;
+    color: 'white';
+    background-color: rgba(0, 0, 0, 0.5);
+    /* padding: '20px'; */
+    border-radius: '10px'
+}
 
 .title {
   background-color: var(--tertiary-color);

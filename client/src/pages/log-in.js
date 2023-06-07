@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { SIGN_IN } from "../utils/mutations";
 import AuthService from "../utils/auth";
 import MyNav from "../components/Navigation/Nav";
+import {Link} from 'react-router-dom'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import './log-in.module.css';
 import { async } from "regenerator-runtime";
@@ -55,13 +56,17 @@ const LoginForm = (props) => {
                 </Form.Group>
                 <Button variant="" type="submit" className="mt-2 buttons">
                   Login
-                </Button>
+                </Button> <br/>
+                <Form.Text className="signup-link" as={Link} to='/signup'>
+                  New to ConstructDaily? <br/>
+                  Sign up now
+                </Form.Text>
               </Form>
             </div>
           </Col>
         </Row>
         <Row>
-          
+
         </Row>
       </Container>
       </>
