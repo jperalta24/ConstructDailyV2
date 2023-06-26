@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-color);
+  background-color: var(--dark-gray);
   /* background-image: linear-gradient(to right, var(--tertiary-color) 0%, var(--tertiary-color) 40%, var(--primary-color) 40%, var(--primary-color) 100%); */
 
 }
@@ -77,22 +77,33 @@ code {
   margin-left: 0;
 } */
 
-.signup-link{
+.profile-title {
+  margin-top: 15px;
+  color: var(--light-gray);
+  font-family: 'Agdasima', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'MuseoModerno', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.signup-link {
   color: var(--light-gray);
 }
 
-.signup-container{
-    /* padding-top: 25px; */
-    margin-top: 75px;
-    margin-right: 250px;
-    margin-left: 250px;
-    padding-bottom: 5px;
-    color: 'white';
-    background-color: rgba(0, 0, 0, 0.5);
-    /* padding: '20px'; */
-    border-radius: '10px'
+.signup-container {
+  /* padding-top: 25px; */
+  margin-top: 75px;
+  margin-right: 250px;
+  margin-left: 250px;
+  padding-bottom: 5px;
+  color: 'white';
+  background-color: rgba(0, 0, 0, 0.5);
+  /* padding: '20px'; */
+  border-radius: '10px'
 }
 
 .title {
   background-color: var(--tertiary-color);
+
 }

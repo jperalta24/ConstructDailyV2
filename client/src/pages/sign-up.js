@@ -17,9 +17,10 @@ const RegisterForm = (props) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('');
+    const [role, setRole] = useState('admin');
 
     const [createUser] = useMutation(CREATE_USER);
+    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -32,6 +33,7 @@ const RegisterForm = (props) => {
             console.log('user created successfully')
         } catch (error) {
             console.error('Error creating user', error);
+          
         }
     }
 

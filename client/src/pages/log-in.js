@@ -6,13 +6,15 @@ import MyNav from "../components/Navigation/Nav";
 import {Link} from 'react-router-dom'
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import './log-in.module.css';
-import { async } from "regenerator-runtime";
+
 
 const LoginForm = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [signIn] = useMutation(SIGN_IN);
     const [isLoggedIn, setIsLoggedIn] = useState('');
+
+    const [errorMessage, setErrorMessage] = useState('');
     
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -22,8 +24,10 @@ const LoginForm = (props) => {
             AuthService.login(data.signIn.token);
             setIsLoggedIn(true);
             props.onSuccess()
+            console.log('Welcome!');
         } catch (err) {
             console.error(err);
+            setErrorMessage("Incorrect email or password");
         }
     }
     
@@ -54,6 +58,7 @@ const LoginForm = (props) => {
                     placeholder="Password"
                   />
                 </Form.Group>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <Button variant="" type="submit" className="mt-2 buttons">
                   Login
                 </Button> <br/>
