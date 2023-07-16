@@ -11,7 +11,7 @@ import MyNav from "../Navigation/Nav";
 const UserProfile = () => {
     const { name: userParam } = useParams();
 
-    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    const { loading, data,} = useQuery(userParam ? QUERY_USER : QUERY_ME, {
         variables: { name: userParam },
         onCompleted: (queryData) => {
             console.log(queryData);
@@ -43,8 +43,9 @@ const UserProfile = () => {
                 </Col>
             </Row>
             <Row>
-                <ProjectForm userId={user._id}></ProjectForm>
-                <ProjectList projects = {data.project}></ProjectList>
+                <Col><ProjectForm userId={user._id}></ProjectForm>
+                <ProjectList projects = {data.projects}></ProjectList>
+                </Col>
             </Row>
         </Container>
         </>

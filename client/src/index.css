@@ -87,6 +87,17 @@ code {
   font-weight: 700;
 }
 
+/* styles.css (or wherever your CSS is) */
+.project-list {
+  text-decoration: none !important; /* This removes the underline */
+}
+
+
+#project-title {
+  color: var(--secondary-color);
+  border-bottom: solid, color( red green blue);
+}
+
 .signup-link {
   color: var(--light-gray);
 }

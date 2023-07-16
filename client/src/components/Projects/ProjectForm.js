@@ -9,7 +9,14 @@ import { async } from "regenerator-runtime";
 const ProjectForm = ({ userId }) => {
     const [modalShow, setModalShow] = useState(false);
     const [name, setName] = useState('');
-    const [createProject, { data }] = useMutation(CREATE_PROJECT);
+    const [createProject, { data }] = useMutation(CREATE_PROJECT,{
+        refetchQueries: [
+            {
+              query: PROJECTS_QUERY,
+              variables: { userId },
+            },
+        ],
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,6 +24,7 @@ const ProjectForm = ({ userId }) => {
             await createProject({ variables: { name, userId } });
             setModalShow(false);
             setName('');
+            
         } catch (error) {
             console.error('failed to create project',error);
         }
@@ -24,8 +32,8 @@ const ProjectForm = ({ userId }) => {
 
     return (
         <>
-        <Button onClick={()=> setModalShow(true)}>
-            Create Project
+        <Button onClick={()=> setModalShow(true)}className="buttons">
+            Add Project
         </Button>
 
         <Modal
