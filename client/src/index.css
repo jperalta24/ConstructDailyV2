@@ -90,6 +90,10 @@ code {
 /* styles.css (or wherever your CSS is) */
 .project-list {
   text-decoration: none !important; /* This removes the underline */
+  transition: color 0.3s ease;
+}
+.project-list:hover {
+  color: var(--secondary-color);
 }
 
 

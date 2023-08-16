@@ -38,7 +38,7 @@ const ProjectList = ({ userId }) => {
                   className="project-list" 
                   variant="link" 
                   onClick={() => handleProjectClick(project._id)}>
-                  <h3>{project.name}</h3>
+                  <h3  className="project-list">{project.name}</h3>
                 </Button>
               </div>
             ))}
