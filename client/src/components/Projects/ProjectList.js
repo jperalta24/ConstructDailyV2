@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate} from 'react-router-dom'
 import { useQuery } from "@apollo/client";
 import { PROJECTS_QUERY } from "../../utils/queries";
 import { useMutation } from "@apollo/client";
 import { DELETE_PROJECT } from "../../utils/mutations";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import ProjectPage from "../../pages/projectPage";
 
 const ProjectList = ({ userId }) => {
   const { loading, error, data, refetch } = useQuery(PROJECTS_QUERY, {
@@ -12,8 +14,12 @@ const ProjectList = ({ userId }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeProjectId, setActiveProjectId] = useState(null); // Add this state
 
+  const navigate = useNavigate();
+
   const handleProjectClick = (projectId) => {
     setSelectedProject(projectId);
+    navigate(`/project/${projectId}`);
+    console.log(projectId)
   }
 
   if (loading) {

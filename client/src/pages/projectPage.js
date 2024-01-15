@@ -2,8 +2,10 @@ import React from 'react';
 import { Container, Row, Col, Image, Button, Nav, Navbar } from "react-bootstrap";
 import MyNav from '../components/Navigation/Nav';
 import DailyLogForm from '../components/DailyLogs/DailyLogForm';
+import { useParams } from 'react-router-dom';
 
-const ProjectPage = ()=>{
+const ProjectPage = (projectId)=>{
+    const { id } = useParams(); // 'id' should match the parameter name in the route path
     return(
         <>
         <MyNav>
@@ -14,7 +16,7 @@ const ProjectPage = ()=>{
             <Row>
                 <Col>
                 <DailyLogForm>
-                    
+
                 </DailyLogForm>
                 </Col>
             </Row>
@@ -23,3 +25,5 @@ const ProjectPage = ()=>{
 
     )
 }
+
+export default ProjectPage
